@@ -1,0 +1,114 @@
+CITRUS-2.07(2016/7/14)f3(256KB)
+WiFi - AT commands echo: switch echo on
+
+OK
+WiFi - Restart module
+AT+RST
+
+
+OK
+
+WiFi - Return the sleep mode
+AT+SLEEP?
+
++SLEEP:2
+
+OK
+WiFi - Return the current WiFi mode
+AT+CWMODE_CUR?
+
++CWMODE_CUR:2
+
+OK
+WiFi - Return the default WiFi mode
+AT+CWMODE_DEF?
+
++CWMODE_DEF:2
+
+OK
+WiFi - Return the configuration of current soft AP
+AT+CWSAP_CUR?
+
++CWSAP_CUR:"ESP_DB0DBD","",1,0,4
+
+OK
+WiFi - Return the configuration of default soft AP
+AT+CWSAP_DEF?
+
++CWSAP_DEF:"ESP_DB0DBD","",1,0,4
+
+OK
+WiFi - Return DHCP disabled or enabled currently
+AT+CWDHCP_CUR?
+
++CWDHCP_CUR:3
+OK
+WiFi - Return DHCP disabled or enabled in default setting
+AT+CWDHCP_DEF?
+
++CWDHCP_DEF:3
+OK
+WiFi - Return the MAC Address of station currently
+AT+CIPSTAMAC_CUR?
+
++CIPSTAMAC_CUR:"18:fe:34:db:0d:bd"
+
+OK
+WiFi - Return the MAC Address of station in default setting
+AT+CIPSTAMAC_DEF?
+
++CIPSTAMAC_DEF:"ff:ff:ff:ff:ff:ff"
+
+OK
+WiFi - Return the MAC Address of AP currentrly
+AT+CIPAPMAC_CUR?
+
++CIPAPMAC_CUR:"1a:fe:34:db:0d:bd"
+
+OK
+WiFi - Return the MAC Address of AP default setting
+AT+CIPAPMAC_DEF?
+
++CIPAPMAC_DEF:"ff:ff:ff:ff:ff:ff"
+
+OK
+WiFi - Return the IP Address of station currently
+AT+CIPSTA_CUR?
+
++CIPSTA_CUR:ip:"0.0.0.0"
++CIPSTA_CUR:gateway:"0.0.0.0"
++CIPSTA_CUR:netmask:"0.0.0.0"
+
+OK
+WiFi - Return the IP Address of station in default setting
+AT+CIPSTA_DEF?
+
++CIPSTA_DEF:ip:"0.0.0.0"
++CIPSTA_DEF:gateway:"0.0.0.0"
++CIPSTA_DEF:netmask:"0.0.0.0"
+
+OK
+WiFi - Return the IP Address of softAP currently
+AT+CIPAP_CUR?
+
++CIPAP_CUR:ip:"192.168.4.1"
++CIPAP_CUR:gateway:"192.168.4.1"
++CIPAP_CUR:netmask:"255.255.255.0"
+
+OK
+WiFi - Return the IP Address of softAP in default setting
+
+ ets Jan  8 2013,rst cause:1, boot mode:(3,7)
+
+load 0x40100000, len 1396, room 16 
+tail 4
+chksum 0x89
+load 0x3ffe8000, len 776, room 4 
+tail 4
+chksum 0xe8
+load 0x3ffe8308, len 540, room 4 
+tail 8
+chksum 0xc0
+csum 0xc0
+
+2nd boot version : 1.4

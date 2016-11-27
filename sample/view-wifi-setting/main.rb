@@ -14,8 +14,9 @@ end
 Usb.println "WiFi - AT commands echo: switch echo on"
 Usb.print WiFi.at "ATE1", 1
 
-Usb.println "WiFi - Restart module"
-Usb.println WiFi.at "RST"
+#Comment out for "AT+CIPAP_DEF?".
+#Usb.println "WiFi - Restart module"
+#Usb.println WiFi.at "RST"
 
 Usb.println "WiFi - Return the sleep mode"
 Usb.print WiFi.at "SLEEP?"

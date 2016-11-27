@@ -2,12 +2,6 @@ CITRUS-2.07(2016/7/14)f3(256KB)
 WiFi - AT commands echo: switch echo on
 
 OK
-WiFi - Restart module
-AT+RST
-
-
-OK
-
 WiFi - Return the sleep mode
 AT+SLEEP?
 
@@ -97,18 +91,12 @@ AT+CIPAP_CUR?
 
 OK
 WiFi - Return the IP Address of softAP in default setting
+AT+CIPAP_DEF?
 
- ets Jan  8 2013,rst cause:1, boot mode:(3,7)
++CIPAP_DEF:ip:"0.0.0.0"
++CIPAP_DEF:gateway:"0.0.0.0"
++CIPAP_DEF:netmask:"0.0.0.0"
 
-load 0x40100000, len 1396, room 16 
-tail 4
-chksum 0x89
-load 0x3ffe8000, len 776, room 4 
-tail 4
-chksum 0xe8
-load 0x3ffe8308, len 540, room 4 
-tail 8
-chksum 0xc0
-csum 0xc0
+OK
 
-2nd boot version : 1.4
+

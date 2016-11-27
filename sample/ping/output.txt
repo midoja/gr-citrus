@@ -1,0 +1,99 @@
+CITRUS-2.07(2016/7/14)f3(256KB)
+WiFi - AT commands echo: switch echo on
+
+OK
+WiFi - Set a WiFi mode as a station mode
+AT+CWMODE=1
+
+
+OK
+WiFi - enable station DHCP
+AT+CWDHCP_CUR=1,1
+
+
+OK
+
+AT+CWDHCP_CUR?
+
++CWDHCP_CUR:3
+OK
+
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+
+OK
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+WiFi - Dsconnect from AP
+AT+CWQAP
+
+busy p...
++CWJAP:1
+
+FAIL
+WiFi - Connect to AP, for current
+error: Wifi - Can not connect to AP.

@@ -1,0 +1,4 @@
+CITRUS-2.07(2016/7/14)f3(256KB)
+WiFi - Factory reset
+
+OK

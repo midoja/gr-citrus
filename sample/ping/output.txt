@@ -28,72 +28,50 @@ WiFi - Dsconnect from AP
 AT+CWQAP
 
 busy p...
+WIFI CONNECTED
 +CWJAP:1
 
 FAIL
+WIFI DISCONNECT
 WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+WiFi - Return the IP address of station
+AT+CIPSTA_CUR?
 
-busy p...
-+CWJAP:1
++CIPSTA_CUR:ip:"192.168.3.3"
++CIPSTA_CUR:gateway:"192.168.3.1"
++CIPSTA_CUR:netmask:"255.255.255.0"
 
-FAIL
-WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+OK
+WiFi - Get local IP address
+AT+CIFSR
 
-busy p...
-+CWJAP:1
++CIFSR:STAIP,"192.168.3.3"
++CIFSR:STAMAC,"18:fe:34:db:0d:bd"
 
-FAIL
-WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+OK
+WiFi - Function Ping
+AT+PING="www.This-URI-do-not-exist.co.jp"
 
-busy p...
-+CWJAP:1
 
-FAIL
-WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+ERROR
+AT+PING="news.yahoo.co.jp"
 
-busy p...
-+CWJAP:1
++19
 
-FAIL
-WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+OK
+AT+PING="192.168.3.1"
 
-busy p...
-+CWJAP:1
++7
 
-FAIL
-WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+OK
+AT+PING="192.168.3.2"
 
-busy p...
-+CWJAP:1
++timeout
 
-FAIL
-WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+ERROR
+AT+PING="192.168.3.3"
 
-busy p...
-+CWJAP:1
++timeout
 
-FAIL
-WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+ERROR
 
-busy p...
-+CWJAP:1
-
-FAIL
-WiFi - Connect to AP, for current
-error: Wifi - Can not connect to AP.

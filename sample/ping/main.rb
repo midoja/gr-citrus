@@ -26,7 +26,7 @@ wifiConnection = false
   Usb.println "WiFi - Dsconnect from AP"
   Usb.print WiFi.at "CWQAP"
   Usb.println "WiFi - Connect to AP, for current"
-  if (WiFi.at('CWJAP_CUR="333333333333-2G","<password>"').to_s.include?("OK")) then
+  if (WiFi.at('CWJAP_CUR="abc","<password>"').to_s.include?("OK")) then
     wifiConnection = true
     break
   end

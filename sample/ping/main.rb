@@ -11,43 +11,41 @@ if (System.useWiFi == 0) then
   System.exit
 end
 
+Usb.println "WiFi - Output AT command's response to serial 0"
+WiFi.serialOut 1, 0
+
 Usb.println "WiFi - AT commands echo: switch echo on"
-Usb.print WiFi.at "ATE1", 1
+WiFi.at "ATE1", 1
 
 Usb.println "WiFi - Set a WiFi mode as a station mode"
-Usb.print WiFi.at "CWMODE=1"
+WiFi.setMode 1
 
 Usb.println "WiFi - enable station DHCP"
-Usb.println WiFi.at "CWDHCP_CUR=1,1"
-Usb.println WiFi.at "CWDHCP_CUR?"
+WiFi.at "CWDHCP_CUR=1,1"
+WiFi.at "CWDHCP_CUR?"
 
-wifiConnection = false
-10.times do
-  Usb.println "WiFi - Dsconnect from AP"
-  Usb.print WiFi.at "CWQAP"
-  Usb.println "WiFi - Connect to AP, for current"
-  if (WiFi.at('CWJAP_CUR="abc","<password>"').to_s.include?("OK")) then
-    wifiConnection = true
-    break
-  end
-end
+Usb.println "WiFi - Dsconnect from AP"
+WiFi.disconnect
 
-if (!wifiConnection) then
+Usb.println "WiFi - Connect to AP, for current"
+connectionResponse = WiFi.connect "abc", "<password>"
+
+if !connectionResponse.include? "OK" then
   Usb.println "error: Wifi - Can not connect to AP."
   System.exit
 end
 
 Usb.println "WiFi - Return the IP address of station"
-Usb.print WiFi.at "CIPSTA_CUR?"
+WiFi.at "CIPSTA_CUR?"
 
 Usb.println "WiFi - Get local IP address"
-Usb.print WiFi.at "CIFSR"
+WiFi.ipconfig
 
 Usb.println "WiFi - Function Ping"
-Usb.print WiFi.at 'PING="www.This-URI-do-not-exist.co.jp"'
-Usb.print WiFi.at 'PING="news.yahoo.co.jp"'
-Usb.print WiFi.at 'PING="192.168.3.1"'
-Usb.print WiFi.at 'PING="192.168.3.2"'
-Usb.print WiFi.at 'PING="192.168.3.3"'
+WiFi.at 'PING="www.This-URI-do-not-exist.co.jp"'
+WiFi.at 'PING="news.yahoo.co.jp"'
+WiFi.at 'PING="192.168.3.1"'
+WiFi.at 'PING="192.168.3.2"'
+WiFi.at 'PING="192.168.3.3"'
 
 delay 30000

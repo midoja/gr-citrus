@@ -1,4 +1,5 @@
-CITRUS-2.07(2016/7/14)f3(256KB)
+CITRUS-2.19(2016/11/19)f3(256KB)
+WiFi - Output AT command's response to serial 0
 WiFi - AT commands echo: switch echo on
 
 OK
@@ -12,28 +13,23 @@ AT+CWDHCP_CUR=1,1
 
 
 OK
-
 AT+CWDHCP_CUR?
 
 +CWDHCP_CUR:3
 OK
-
 WiFi - Dsconnect from AP
 AT+CWQAP
 
+WIFI DISCONNECT
 
 OK
 WiFi - Connect to AP, for current
-WiFi - Dsconnect from AP
-AT+CWQAP
+AT+CWJAP="abc","<password>"
 
-busy p...
 WIFI CONNECTED
-+CWJAP:1
+WIFI GOT IP
 
-FAIL
-WIFI DISCONNECT
-WiFi - Connect to AP, for current
+OK
 WiFi - Return the IP address of station
 AT+CIPSTA_CUR?
 
@@ -74,4 +70,3 @@ AT+PING="192.168.3.3"
 +timeout
 
 ERROR
-
